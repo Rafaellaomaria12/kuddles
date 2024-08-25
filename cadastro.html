@@ -7,243 +7,172 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <style>
-        @font-face{
+            @font-face {
             font-family: especial;
             src: url(fonte/Darling\ Coffee.otf);
         }
-     :root{
-    --cor1: #eaddf9; 
-    --cor2: #ccc0d6;
-    --cor3: #b296d9;
-    --cor4: #574f73;
-    --cor5: #ded3e3;
-}
-      h1 {
-    padding: 100;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: especial;
-    color: #240046;
-}
+        @font-face {
+        font-family: normal;
+        src: url(fonte/TT\ Interphases\ Pro\ Mono\ Trial\ Bold.ttf)
+        }
 
-body {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ccc0d6;
-    padding: 0%;
-}
+        :root {
+            --cor1: #eaddf9;
+            --cor2: #ccc0d6;
+            --cor3: #b296d9;
+            --cor4: #574f73;
+            --cor5: #ded3e3;
+        }
 
-.container {
-    width: 80%;
-    height: 80vh;
-    display: flex;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-}
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column; /* Alinha os elementos verticalmente */
+            justify-content: center; /* Centraliza verticalmente */
+            align-items: center; /* Centraliza horizontalmente */
+            background: #ccc0d6;
+            margin: 0;
+            padding: 0;
+        }
 
-.form-image {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fde3a7d7;
-    padding: 1rem;
-}
+        h1 {
+            text-align: center; /* Centraliza o texto horizontalmente */
+            padding: 10px; /* Ajusta o espaço ao redor do título */
+            box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
+            width: 100%;
+            font-size: 2.5rem; /* Ajuste o tamanho da fonte conforme necessário */
+            color: #240046;
+            font-family: especial; /* Usa a fonte personalizada */
+            margin: 0; /* Remove margens padrão */
+        }
 
-.form-image img {
-    width: 31rem;
-}
+        .container {
+            display: flex;
+            flex-direction: column; /* Alinha os itens verticalmente */
+            align-items: center; /* Centraliza o conteúdo horizontalmente */
+            width: 60%; /* Largura ajustada para menor tamanho */
+            max-width: 350px; /* Largura máxima ajustada */
+            height: 60vh; /* Altura ajustada para ocupar 60% da altura da tela */
+            background-color: var(--cor3);
+            border-radius: 15px; /* Cantos arredondados */
+            padding: 20px; /* Ajusta o padding interno para mais espaço */
+            box-shadow: 0 4px 8px rgba(28, 3, 44, 0.1); /* Sombra suave para dar profundidade */
+            overflow-x: hidden; /* Remove a rolagem horizontal */
 
-.form {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #b296d9;
-    padding: 3rem;
-}
+        }
 
-.form-header {
-    margin-bottom: 3rem;
-    display: flex;
-    justify-content: space-between;
-}
+        .form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #b296d9;
+            padding: 1.5rem; /* Reduz o padding do formulário para menos espaço interno */
+            border-radius: 10px; /* Cantos arredondados */
+        }
 
-.login-button {
-    display: flex;
-    align-items: center;
-}
+        .input-group {
+            display: flex;
+            flex-direction: column; /* Alinha os itens verticalmente */
+            width: 100%;
+            gap: 1rem; /* Espaço entre os campos */
+        }
 
-.login-button button {
-    border: none;
-    background-color: #574f73;
-    padding: 0.4rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        .input-box {
+            display: flex;
+            flex-direction: column;
+            width: 100%; /* Largura total do contêiner */
+            max-width: 250px; /* Define uma largura máxima reduzida para as caixas de entrada */
+        }
 
-.login-button button:hover {
-    background-color: #b296d9;
-}
+        .input-box input {
+            margin: 0;
+            padding: 1rem; /* Aumenta o padding interno dos inputs para aumentar a altura */
+            border: none;
+            border-radius: 6px; /* Cantos arredondados para os inputs */
+            box-shadow: 1px 1px 6px rgba(77, 30, 138, 0.5);
+            font-size: 0.75rem; /* Reduz o tamanho da fonte dos inputs */
+            width: 100%; /* Largura total do input-box */
+            box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
+        }
 
-.login-button button a {
-    text-decoration: none;
-    font-weight: 500;
-    color: #fff;
-}
+        .input-box input:hover {
+            background-color: #eeeeee75;
+        }
 
-.form-header h1::after {
-    content: '';
-    display: block;
-    width: 5rem;
-    height: 0.3rem;
-    background-color: #574f73;
-    margin: 0 auto;
-    position: absolute;
-    border-radius: 10px;
-}
+        .input-box input:focus-visible {
+            outline: 1px solid #574f73;
+        }
 
-.input-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 1rem 0;
-}
+        .input-box label {
+            font-size: 0.75rem; /* Ajusta o tamanho da fonte do rótulo */
+            font-weight: 600; /* Corrige o valor de font-weight */
+            color: white;
+            margin-bottom: 0.3rem; /* Espaço abaixo do rótulo */
+        }
 
-.input-box {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1.1rem;
-}
+        .continue-button {
+            width: 100%;
+            margin-top: 2rem; /* Ajusta o espaço acima do botão */
+        }
 
-.input-box input {
-    margin: 0.6rem 0;
-    padding: 0.8rem 1.2rem;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 1px 1px 6px white;
-    font-size: 0.8rem;
-}
+        .continue-button button {
+            width: 100%;
+            border: none;
+            background-color: #574f73;
+            padding: 0.75rem; /* Aumenta o padding do botão */
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem; /* Aumenta o tamanho da fonte do botão */
+            font-weight: 500;
+            color: #fff;
+            text-align: center;
+        }
 
-.input-box input:hover {
-    background-color: #eeeeee75;
-}
+        .continue-button button:hover {
+            background-color: #4a3b5d;
+        }
 
-.input-box input:focus-visible {
-    outline: 1px solid #574f73;
-}
+        .continue-button a {
+            text-decoration: none;
+            color: #fff;
+        }
 
-.input-box label,
-.gender-title h6 {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: white;
-}
+        @media screen and (max-width: 1330px) {
+            .form-image {
+                display: none;
+            }
+            .container {
+                width: 70%;
+            }
+            
+            }
 
-.input-box input::placeholder {
-    color: #000000be;
-}
-
-.gender-group {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0.62rem;
-    padding: 0 .5rem;
-}
-
-.gender-input {
-    display: flex;
-    align-items: center;
-}
-
-.gender-input input {
-    margin-right: 0.35rem;
-}
-
-.gender-input label {
-    font-size: 0.81rem;
-    font-weight: 600;
-    color: #000000c0;
-}
-
-.continue-button button {
-    width: 100%;
-    margin-top: 2.5rem;
-    border: none;
-    background-color: #574f73;
-    padding: 0.62rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.continue-button button:hover {
-    background-color: #574f73;
-}
-
-.continue-button button a {
-    text-decoration: none;
-    font-size: 0.93rem;
-    font-weight: 500;
-    color: #fff;
-}
-
-@media screen and (max-width: 1330px) {
-    .form-image {
-        display: none;
-    }
-    .container {
-        width: 50%;
-    }
-    .form {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 1064px) {
-    .container {
-        width: 90%;
-        height: auto;
-    }
-    .input-group {
-        flex-direction: column;
-        z-index: 5;
-        padding-right: 5rem;
-        max-height: 10rem;
-        overflow-y: scroll;
-        flex-wrap: nowrap;
-    }
-    .gender-inputs {
-        margin-top: 2rem;
-    }
-    .gender-group {
-        flex-direction: column;
-    }
-    .gender-title h6 {
-        margin: 0;
-    }
-    .gender-input {
-        margin-top: 0.5rem;
-    }
-}
+        @media screen and (max-width: 1064px) {
+            .container {
+                width: 85%;
+                height: auto;
+            }
+            .input-group {
+                padding-right: 5rem;
+                max-height: 13rem;
+                overflow-y: scroll;
+            }
+        }
     </style>
 </head>
-
 <body>
+    <div class="title">
+        <h1>Cadastre-se</h1>
+    </div>
     <div class="container">
         <div class="form-image">
             <img src="img/caoegato.png" alt="caoegato">
         </div>
         <div class="form">
             <form action="#">
-                <div class="form-header">
-                    <div class="title">
-                        <h1>Cadastre-se</h1>
-                    </div>
-                </div>
-
                 <div class="input-group">
                     <div class="input-box">
                         <label for="firstname">Primeiro Nome</label>
@@ -254,63 +183,33 @@ body {
                         <label for="lastname">Sobrenome</label>
                         <input id="lastname" type="text" name="lastname" placeholder="Digite seu sobrenome" required>
                     </div>
+
                     <div class="input-box">
                         <label for="email">E-mail</label>
                         <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="number">Celular</label>
-                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                        <label for="number">CPF</label>
+                        <input id="number" type="tel" name="number" placeholder="xxxx-xxxx" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="number">CNJ</label>
+                        <input id="number" type="tel" name="number" placeholder="xxxxxx-xxxx" required>
                     </div>
 
                     <div class="input-box">
                         <label for="password">Senha</label>
                         <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
                     </div>
-
-
-                    <div class="input-box">
-                        <label for="confirmPassword">Confirme sua Senha</label>
-                        <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Digite sua senha novamente" required>
-                    </div>
-
-                </div>
-
-                <div class="gender-inputs">
-                    <div class="gender-title">
-                        <h6>Gênero</h6>
-                    </div>
-
-                    <div class="gender-group">
-                        <div class="gender-input">
-                            <input id="female" type="radio" name="gender">
-                            <label for="female">Feminino</label>
-                        </div>
-
-                        <div class="gender-input">
-                            <input id="male" type="radio" name="gender">
-                            <label for="male">Masculino</label>
-                        </div>
-
-                        <div class="gender-input">
-                            <input id="others" type="radio" name="gender">
-                            <label for="others">Outros</label>
-                        </div>
-
-                        <div class="gender-input">
-                            <input id="none" type="radio" name="gender">
-                            <label for="none">Prefiro não dizer</label>
-                        </div>
                     </div>
                 </div>
-
+               
                 <div class="continue-button">
-                    <button><a href="#">Continuar</a> </button>
+                    <button><a href="#">Continuar</a></button>
                 </div>
             </form>
         </div>
     </div>
 </body>
-
 </html>
